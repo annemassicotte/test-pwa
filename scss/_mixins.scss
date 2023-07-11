@@ -1,0 +1,28 @@
+@mixin flexProperties($direction, $justify, $align, $wrap, $gap) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	flex-wrap: $wrap;
+	gap: $gap;
+}
+
+@mixin gridDisposition(
+	$column,
+	$row,
+	$object-fit: cover,
+	$box-shadow: $shadow-img
+) {
+	grid-column: $column;
+	grid-row: $row;
+	object-fit: $object-fit;
+	box-shadow: $box-shadow;
+}
+
+@mixin border($width: 3px, $style: solid, $color) {
+	border: $width $style $color;
+}
+
+@mixin focus($width: 3px, $style: solid, $color) {
+	outline: $width $style $color;
+}

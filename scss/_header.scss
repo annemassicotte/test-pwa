@@ -1,0 +1,63 @@
+.navbar {
+	background-color: $teal;
+	padding: $small-space 0;
+
+	a {
+		&:focus {
+			@include focus($color: $green);
+		}
+	}
+
+	.container {
+		@include flexProperties(null, space-between, center, null, null);
+	}
+
+	&__logo {
+		width: 250px;
+	}
+
+	&__list-item {
+		display: inline-block;
+		margin-left: $small-space;
+
+		a {
+			display: inline-block;
+			text-decoration: none;
+			font-size: $font-size-p * 1.3;
+			color: $white;
+			font-family: $font-heading;
+			transition: all 0.2s;
+
+			&:hover {
+				color: $green;
+				transition: all 0.2s;
+			}
+
+			&::before {
+				font-family: FontAwesome;
+				content: "\f1b0";
+				margin-right: calc($small-space / 4);
+			}
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		&__mobile-menu {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 1199px) {
+		&__logo {
+			width: 225px;
+		}
+
+		&__list {
+			display: none;
+		}
+
+		&__mobile-menu {
+			width: 30px;
+		}
+	}
+}

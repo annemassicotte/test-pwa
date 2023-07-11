@@ -1,0 +1,58 @@
+.row-slider {
+	background-color: $white;
+	background-image: url(../images/fond-arches.png);
+
+	h1 {
+		display: none;
+	}
+
+	&__image-container {
+		width: 70%;
+		margin: 0 auto;
+		@include flexProperties(null, center, null, null, $medium-space);
+	}
+
+	&__image {
+		box-shadow: $shadow-img;
+	}
+
+	&__fleches {
+		width: 40px;
+	}
+
+	&__dot-navigation {
+		@include flexProperties(null, center, null, null, calc($small-space/2));
+		margin-top: $small-space;
+
+		img {
+			width: 15px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		&__image-container {
+			width: 75%;
+			@include flexProperties(null, null, null, null, $small-space);
+		}
+
+		&__fleches {
+			width: 30px;
+		}
+
+		&__dot-navigation {
+			img {
+				width: 10px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		&__image-container {
+			width: 100%;
+		}
+
+		&__fleches {
+			display: none;
+		}
+	}
+}

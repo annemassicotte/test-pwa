@@ -1,0 +1,93 @@
+.row-statistics {
+	background-color: $green;
+
+	h2 {
+		margin-bottom: 0;
+		color: $navy;
+	}
+
+	.container {
+		@include flexProperties(null, null, center, null, $medium-space);
+	}
+
+	a {
+		&:focus {
+			@include focus($color: lighten($teal, 10%));
+		}
+	}
+
+	&__image {
+		box-shadow: $shadow-img;
+	}
+
+	&__column {
+		@include flexProperties(column, null, flex-start, null, $small-space);
+		flex-basis: calc(50% - $small-space);
+	}
+
+	&__results {
+		@include flexProperties(null, null, null, null, $small-space);
+	}
+
+	&__wrapper {
+		flex-basis: 50%;
+	}
+
+	&__number {
+		font-size: $font-size-h1;
+		font-family: $font-heading;
+		color: $navy;
+	}
+
+	&__caption {
+		font-size: $font-size-p-smaller;
+	}
+
+	@media screen and (max-width: 1050px) {
+		&__results {
+			@include flexProperties(column, null, null, null, calc($small-space / 2));
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		.container {
+			@include flexProperties(column-reverse, center, null, null, null);
+		}
+
+		&__column {
+			@include flexProperties(null, null, center, null, null);
+
+			p {
+				text-align: center;
+			}
+		}
+
+		&__results {
+			text-align: center;
+		}
+
+		&__caption {
+			padding: 0 $large-space * 2;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		&__number {
+			font-size: $font-size-h1-mobile;
+		}
+
+		&__caption {
+			padding: 0 $large-space;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		.container {
+			@include flexProperties(null, null, center, null, calc($large-space / 2));
+		}
+
+		&__caption {
+			padding: 0 calc($large-space / 2);
+		}
+	}
+}

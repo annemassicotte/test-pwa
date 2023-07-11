@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Le Havre animal est un refuge situé à Trois-Rivières ayant pour mission de soigner, protéger et assurer l'adoption responsable d'animaux." />
+		<meta name="theme-color" content="#00787a" />
+		<title>Le Havre animal | Refuge animal à Trois-Rivières</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="icon" href="favicon.png" />
+		<link
+			href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="Havre Animal" />
+		<link rel="apple-touch-icon" href="/images/icons/icone-192.png" />
+		<link rel="manifest" href="/manifest.json" />
+		<script src="js/validation.js"></script>
+		<script>
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker.register("service-worker.js").then((reg) => {
+						console.log("Service worker registered.", reg);
+					});
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+		<a class="screen-reader-text" href="#main">Aller au contenu principal</a>
+		<header class="navbar">
+			<div class="container">
+				<a href="index.html"
+					><img
+						class="navbar__logo"
+						src="images/refuge_havre_animal_logo_blanc.svg"
+						alt="Refuge Le Havre animal"
+				/></a>
+
+				<nav>
+					<ul class="navbar__list">
+						<li class="navbar__list-item">
+							<a href="#mission">Notre mission</a>
+						</li>
+						<li class="navbar__list-item">
+							<a href="#statistiques">Statistiques</a>
+						</li>
+						<li class="navbar__list-item">
+							<a href="#nos-pensionnaires">Nos pensionnaires</a>
+						</li>
+						<li class="navbar__list-item">
+							<a href="#prendre-rendez-vous">Prendre rendez-vous</a>
+						</li>
+					</ul>
+					<img
+						class="navbar__mobile-menu"
+						src="images/menu-hamburger.svg"
+						alt="Menu" />
+				</nav>
+			</div>
+		</header>
+
+		<main id="main">
+			<section class="row-slider">
+				<div class="container">
+					<h1>Refuge Havre animal</h1>
+					<div class="row-slider__image-container">
+						<img
+							class="row-slider__fleches"
+							src="images/fleche-gauche.svg"
+							alt="Précédent" />
+						<img
+							class="row-slider__image"
+							src="images/chat_endormi.jpg"
+							alt="Chat endormi" />
+						<img
+							class="row-slider__fleches"
+							src="images/fleche-droite.svg"
+							alt="Suivant" />
+					</div>
+					<div class="row-slider__dot-navigation">
+						<img src="images/point-navigation.svg" alt="Image 1" />
+						<img src="images/point-navigation.svg" alt="Image 2" />
+						<img src="images/point-navigation.svg" alt="Image 3" />
+					</div>
+				</div>
+			</section>
+
+			<section class="row-newsletter">
+				<div class="container">
+					<form
+						id="form-newsletter"
+						action="confirmation-inscription.html"
+						onsubmit="return validateNewsletterForm()"
+						novalidate>
+						<p class="row-newsletter__text">
+							Pour rester à l'affût de nos dernières nouvelles, abonnez-vous à
+							notre infolettre!
+						</p>
+						<div class="row-newsletter__fields">
+							<div class="row-newsletter__field-wrapper input-control">
+								<label for="courriel">Courriel:</label>
+								<input
+									type="email"
+									id="courriel"
+									name="courriel"
+									placeholder="Courriel" />
+								<div class="errorMessage"></div>
+							</div>
+							<button class="button button--navy" type="submit">
+								M'inscrire
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section class="row-cta">
+				<div class="row-cta__container">
+					<p class="row-cta__text">Voyez nos derniers pensionnaires</p>
+					<a class="button button--navy" href="#nos-pensionnaires"
+						>Consulter les fiches</a
+					>
+				</div>
+			</section>
+
+			<section class="row-mission" id="mission">
+				<div class="container">
+					<h2>Notre mission</h2>
+					<p class="row-mission__text">
+						La vocation du Havre animal est bien simple: fournir un refuge sûr,
+						aimant et bienveillant aux animaux sans abri, abandonnés ou
+						maltraités. Notre mission comporte 3 angles intimement liés:
+					</p>
+					<div class="row-mission__wrapper">
+						<div class="row-mission__item">
+							<div class="row-mission__image">
+								<img
+									src="images/proteger.png"
+									alt="Protéger"
+									class="row-mission__icon" />
+							</div>
+							<h3>Protéger</h3>
+							<p>
+								La protection des animaux est notre priorité absolue et nous
+								nous faisons un devoir de leur offrir un environnement
+								sécuritaire et sain.
+							</p>
+						</div>
+						<div class="row-mission__item">
+							<div class="row-mission__image">
+								<img
+									src="images/soigner.png"
+									alt="Soigner"
+									class="row-mission__icon" />
+							</div>
+							<h3>Soigner</h3>
+							<p>
+								Nous n'hésitons pas à prodiguer les meilleurs soins qui soient à
+								nos pensionnaires afin de les remettre sur pattes.
+							</p>
+						</div>
+						<div class="row-mission__item">
+							<div class="row-mission__image">
+								<img
+									src="images/adopter.png"
+									alt="Adopter"
+									class="row-mission__icon" />
+							</div>
+
+							<h3>Adopter</h3>
+							<p>
+								Nous entreprenons des actions pour favoriser l'adoption
+								responsable afin que nos pensionnaires héritent d'une famille
+								aimante pour la vie.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row-gallery">
+				<div class="container">
+					<img id="img-1" src="images/chat_et_chien.jpg" alt="Chat et chien" />
+					<img id="img-2" src="images/chat_rescape.jpg" alt="Chat rescapé" />
+					<img id="img-3" src="images/petit_chien.jpg" alt="Petit chien" />
+					<img id="img-4" src="images/lapin.jpg" alt="Lapin" />
+					<img
+						id="img-5"
+						src="images/chat_et_chien_couches.jpg"
+						alt="Chat et chien couchés" />
+					<img
+						id="img-6"
+						src="images/highfive.jpg"
+						alt="Humain et chat qui se font un highfive" />
+				</div>
+			</section>
+
+			<section class="row-statistics" id="statistiques">
+				<div class="container">
+					<div class="row-statistics__column">
+						<img
+							class="row-statistics__image"
+							src="images/statistiques.jpeg"
+							alt="Statistiques du nombre d'animaux adoptés et retrouvés abandonnés" />
+					</div>
+
+					<div class="row-statistics__column">
+						<h2>Le Havre animal en chiffres</h2>
+						<p>
+							Depuis notre fondation, nous effectuons de nombreuses actions de
+							sensibilisation et de prévention afin de favoriser l'adoption
+							responsable et de réduire le nombre d'animaux abandonnés. Nous
+							sommes fiers de vous présenter nos résultats!
+						</p>
+
+						<div class="row-statistics__results">
+							<div class="row-statistics__wrapper">
+								<p class="row-statistics__number">+37.5%</p>
+								<p class="row-statistics__caption">
+									Animaux ayant trouvé une famille pour la vie depuis 2019
+								</p>
+							</div>
+							<div class="row-statistics__wrapper">
+								<p class="row-statistics__number">-72%</p>
+								<p class="row-statistics__caption">
+									Animaux retrouvés abandonnés et ayant été pris en charge par
+									le Havre animal depuis 2019
+								</p>
+							</div>
+						</div>
+
+						<a href="#" class="button button--navy">Voir plus</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="row-cards" id="nos-pensionnaires">
+				<div class="container">
+					<h2>Nos derniers pensionnaires</h2>
+					<p class="row-cards__intro-text">
+						Voyez la binette de nos derniers pensionnaires et apprenez-en plus
+						sur eux! Vous tomberez en amour, nous en sommes convaincus!
+					</p>
+
+					<div class="row-cards__wrapper">
+						<div class="row-cards__item">
+							<img
+								class="row-cards__image"
+								src="images/charlie.jpeg"
+								alt="Charlie le chien" />
+							<div class="row-cards__animal-info">
+								<div>
+									<h3>Charlie</h3>
+									<p>2 ans, labrador mâle</p>
+								</div>
+								<p>
+									Fidèle et joueur, Charlie est un chien qui a besoin d'une
+									bonne dose d'exercice quotidiennement.
+								</p>
+								<a href="#" class="button button--white">Voir la fiche</a>
+							</div>
+						</div>
+
+						<div class="row-cards__item">
+							<img
+								class="row-cards__image"
+								src="images/yoshi.jpeg"
+								alt="Yoshi le chat" />
+							<div class="row-cards__animal-info">
+								<div>
+									<h3>Yoshi</h3>
+									<p>1 an, domestique mâle</p>
+								</div>
+								<p>
+									Le beau Yoshi est un chat très affectueux qui adore les câlins
+									et les caresses.
+								</p>
+								<a href="#" class="button button--white">Voir la fiche</a>
+							</div>
+						</div>
+
+						<div class="row-cards__item">
+							<img
+								class="row-cards__image"
+								src="images/donut.jpeg"
+								alt="Donut le lapin" />
+							<div class="row-cards__animal-info">
+								<div>
+									<h3>Donut</h3>
+									<p>Environ 3 ans, rex femelle</p>
+								</div>
+								<p>
+									Donut est à la recherche d'une famille calme qui saura lui
+									donner beaucoup d'amour et de soins.
+								</p>
+								<a href="#" class="button button--white">Voir la fiche</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row-form" id="prendre-rendez-vous">
+				<div class="row-form__map-container">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5331.408090325414!2d-72.63338184527974!3d46.346137740346904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc7ceb674945a25%3A0x3e2a87f8688a5118!2s5000%20Bd%20Saint-Jean%2C%20Trois-Rivi%C3%A8res%2C%20QC%20G9B%200N4!5e0!3m2!1sfr!2sca!4v1686422960065!5m2!1sfr!2sca"
+						width="100"
+						height="100"
+						style="border: 0"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						tabindex="-1">
+					</iframe>
+				</div>
+				<div class="container">
+					<div class="row-form__box">
+						<h2>Prendre rendez-vous</h2>
+						<p>
+							Prenez rendez-vous pour rencontrer l'animal que vous voudriez
+							adopter.
+						</p>
+						<form
+							action="confirmation-rdv.html"
+							id="form-appointment"
+							onsubmit="return validateAppointmentForm()"
+							novalidate>
+							<div class="row-form__fields-wrapper">
+								<div class="row-form__two-fields-wrapper">
+									<div class="row-form__input-label-wrapper input-control">
+										<label class="row-form__label" for="txtNom"
+											>Nom de famille <span>*</span></label
+										>
+										<input type="text" id="txtNom" name="txtNom" required />
+										<div class="errorMessage"></div>
+									</div>
+
+									<div class="row-form__input-label-wrapper input-control">
+										<label class="row-form__label" for="txtPrenom"
+											>Prénom <span>*</span></label
+										>
+										<input
+											type="text"
+											id="txtPrenom"
+											name="txtPrenom"
+											required />
+										<div class="errorMessage"></div>
+									</div>
+								</div>
+
+								<div class="row-form__input-label-wrapper input-control">
+									<label class="row-form__label" for="email">
+										Courriel <span>*</span></label
+									>
+									<input type="email" id="email" name="courriel" required />
+									<div class="errorMessage"></div>
+								</div>
+
+								<div class="row-form__two-fields-wrapper">
+									<div class="row-form__input-label-wrapper input-control">
+										<label class="row-form__label" for="numTel"
+											>Numéro de téléphone <span>*</span></label
+										>
+										<input type="tel" id="numTel" name="numTel" required />
+										<div class="errorMessage"></div>
+									</div>
+
+									<div class="row-form__input-label-wrapper input-control">
+										<label class="row-form__label" for="txtAnimal"
+											>Nom de l'animal <span>*</span></label
+										>
+										<input
+											type="text"
+											id="txtAnimal"
+											name="txtAnimal"
+											required />
+										<div class="errorMessage"></div>
+									</div>
+								</div>
+
+								<div class="row-form__two-fields-wrapper">
+									<div class="row-form__input-label-wrapper input-control">
+										<label class="row-form__label" for="dateRdv"
+											>Date <span>*</span></label
+										>
+										<input type="date" id="dateRdv" name="dateRdv" required />
+										<div class="errorMessage"></div>
+									</div>
+
+									<div class="row-form__input-label-wrapper input-control">
+										<label class="row-form__label" for="selHeure"
+											>Heure du rendez-vous <span>*</span></label
+										>
+										<select name="selHeure" id="selHeure" required>
+											<option value="">Sélectionner une heure</option>
+											<option value="9:00">9:00</option>
+											<option value="10:00">10:00</option>
+											<option value="13:00">13:00</option>
+											<option value="14:00">14:00</option>
+											<option value="15:00">15:00</option>
+											<option value="16:00">16:00</option>
+										</select>
+										<div class="errorMessage"></div>
+									</div>
+								</div>
+
+								<div class="row-form__input-label-wrapper">
+									<label class="row-form__label" for="txtAreaPrecisions"
+										>Précisions (facultatif)</label
+									>
+									<textarea
+										name="txtAreaPrecisions"
+										id="txtAreaPrecisions"
+										cols="30"
+										rows="10"></textarea>
+								</div>
+
+								<button class="button button--navy" type="submit">
+									Soumettre
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<section class="row-footer">
+				<div class="container">
+					<div class="row-footer__logo">
+						<img
+							src="images/refuge_havre_animal_logo_blanc.svg"
+							alt="Refuge Le Havre Animal" />
+					</div>
+
+					<nav>
+						<ul class="row-footer__menu">
+							<li class="row-footer__menu-item">
+								<a href="#mission">Notre mission</a>
+							</li>
+							<li class="row-footer__menu-item">
+								<a href="#statistiques">Statistiques</a>
+							</li>
+							<li class="row-footer__menu-item">
+								<a href="#nos-pensionnaires">Nos pensionnaires</a>
+							</li>
+							<li class="row-footer__menu-item">
+								<a href="#prendre-rendez-vous">Prendre rendez-vous</a>
+							</li>
+						</ul>
+					</nav>
+
+					<hr />
+
+					<div class="row-footer__wrapper">
+						<p>Fait par: Anne Massicotte</p>
+						<div class="row-footer__wrapper-socials">
+							<a href="#"
+								><img
+									class="row-footer__icon"
+									src="images/facebook.svg"
+									alt="Visitez notre page Facebook"
+							/></a>
+							<a href="#"
+								><img
+									class="row-footer__icon"
+									src="images/linkedin.svg"
+									alt="Visitez notre page Linkedin"
+							/></a>
+							<a href="#"
+								><img
+									class="row-footer__icon"
+									src="images/twitter.svg"
+									alt="Abonnez-vous à notre compte Twitter"
+							/></a>
+							<a href="#"
+								><img
+									class="row-footer__icon"
+									src="images/instagram.svg"
+									alt="Abonnez-vous à notre compte Instagram"
+							/></a>
+						</div>
+
+						<div class="row-footer__wrapper-contact">
+							<div class="row-footer__wrapper-icon-link">
+								<img
+									class="row-footer__icon"
+									src="images/telephone.svg"
+									alt="Téléphonez-nous" />
+								<a href="tel:8193754567">(819) 375-4567</a>
+							</div>
+							<div class="row-footer__wrapper-icon-link">
+								<img
+									class="row-footer__icon"
+									src="images/email.svg"
+									alt="Écrivez-nous par courriel" />
+								<a href="mailto:info@havreanimal.com">info@havreanimal.com</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</footer>
+	</body>
+</html>

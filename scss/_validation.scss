@@ -1,0 +1,23 @@
+.input-control {
+	&.success {
+		input,
+		select {
+			border-color: $greenValidationForm;
+		}
+	}
+
+	&.error {
+		input,
+		select {
+			border-color: $redValidationForm;
+		}
+	}
+
+	.errorMessage {
+		font-size: $font-size-p-smaller;
+		font-family: $font-text;
+		text-align: left;
+		margin-top: 0.25rem;
+		color: $redValidationForm;
+	}
+}

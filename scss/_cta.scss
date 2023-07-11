@@ -1,0 +1,26 @@
+.row-cta {
+	a {
+		&:focus {
+			@include focus($color: lighten($teal, 10%));
+		}
+	}
+
+	&__container {
+		@include flexProperties(null, center, center, null, $small-space);
+	}
+
+	&__text {
+		font-size: $font-size-h2;
+		font-family: $font-heading;
+	}
+
+	@media screen and (max-width: 768px) {
+		&__container {
+			@include flexProperties(column, null, null, null, null);
+		}
+
+		&__text {
+			font-size: $font-size-h2-mobile;
+		}
+	}
+}
